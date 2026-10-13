@@ -1,0 +1,2 @@
+ALTER TABLE companies
+    ADD COLUMN taxcode VARCHAR(255) NOT NULL UNIQUE
