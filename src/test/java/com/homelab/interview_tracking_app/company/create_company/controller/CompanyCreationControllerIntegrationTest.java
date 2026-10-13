@@ -2,9 +2,12 @@ package com.homelab.interview_tracking_app.company.create_company.controller;
 
 import com.homelab.interview_tracking_app.company.share.entities.Company;
 import com.homelab.interview_tracking_app.company.share.repositories.CompanyRepository;
+import com.homelab.interview_tracking_app.job_post.shared.repositories.JobPostRepository;
 import com.homelab.interview_tracking_app.support.AbstractIntegrationTest;
 import com.homelab.interview_tracking_app.support.MockCompany;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +15,6 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

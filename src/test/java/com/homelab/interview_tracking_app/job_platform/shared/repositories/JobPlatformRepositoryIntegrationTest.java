@@ -6,6 +6,7 @@ import com.homelab.interview_tracking_app.support.MockJobPlatform;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -13,19 +14,13 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@DataJpaTest
 @ActiveProfiles("test")
 class JobPlatformRepositoryIntegrationTest
         extends AbstractIntegrationTest {
 
     @Autowired
     private JobPlatformRepository jobPlatformRepository;
-
-    @AfterEach
-    void cleanUp() {
-        jobPlatformRepository.deleteAllInBatch();
-    }
-
 
     @Test
     void save_whenCreateNewPlatformThenPersistSuccessfully() {
