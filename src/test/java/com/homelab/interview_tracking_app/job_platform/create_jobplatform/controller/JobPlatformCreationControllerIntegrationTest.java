@@ -42,11 +42,6 @@ class JobPlatformCreationControllerIntegrationTest
     @Autowired
     ObjectMapper objectMapper;
 
-    @AfterEach
-    void cleanUp() {
-        jobPlatformRepository.deleteAllInBatch();
-    }
-
     @Test
     void create_whenCreateNewPlatform_thenReturnResponse()
             throws Exception {

@@ -7,12 +7,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@DataJpaTest
 @ActiveProfiles("test")
 class CompanyRepositoryIntegrationTest extends AbstractIntegrationTest {
 
@@ -21,16 +21,6 @@ class CompanyRepositoryIntegrationTest extends AbstractIntegrationTest {
 
     @Autowired
     private EntityManager entityManager;
-
-    @BeforeEach
-    void setUp() {
-
-    }
-
-    @AfterEach
-    void cleanUp() {
-        companyRepository.deleteAllInBatch();
-    }
 
     @Test
     void save_whenAnNewCompanySavedSuccess_thenCouldQueryIt() {
